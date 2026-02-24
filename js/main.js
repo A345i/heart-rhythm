@@ -112,6 +112,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Скролл наверх при клике на логотип
+document.querySelectorAll('.navbar-brand').forEach(brand => {
+    brand.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
+
 // Инициализация
 document.addEventListener('DOMContentLoaded', function() {
     handleScrollAnimation();
