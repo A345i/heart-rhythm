@@ -62,14 +62,36 @@
                     </div>
 
                     <div class="hero-buttons">
-                        <a href="#registration" class="btn btn-primary-custom">
+                        <button  data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-primary-custom">
                             <i class="bi bi-ticket-perforated-fill me-2"></i>Регистрация
-                        </a>
+                        </button>
                         <a href="https://mts-link.ru" target="_blank" class="btn btn-secondary-custom">
                             <i class="bi bi-camera-video me-2"></i>Онлайн трансляция
                         </a>
                     </div>
 
+
+                </div>
+
+                <!-- Правая колонка: анимация -->
+                <div class="col-lg-5 d-flex flex-column align-items-center justify-content-center">
+                    <!-- Изображение сердца -->
+                    <div class="heart-container">
+                        <img src="img/heart.png" alt="Сердце" class="heart-image" id="heart">
+                    </div>
+
+                    <!-- Анимированная синусоида -->
+                    <div class="ecg-wrapper">
+                        <svg class="ecg-svg" viewBox="0 0 1000 180" preserveAspectRatio="xMidYMid meet">
+                            <path class="ecg-path"
+                                  id="ecg-path"
+                                  d="M 0 90 L 0 90" />
+                            <circle class="ecg-dot" r="4" cx="0" cy="90" id="ecg-dot" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="col-12">
                     <div class="hero-organizers">
                         <h4>Под эгидой</h4>
                         <div class="organizer-logos">
@@ -82,26 +104,6 @@
                                 <p>ГКБ имени В. М. Буянова ДЗМ</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Правая колонка: анимация -->
-                <div class="col-lg-5 d-flex flex-column align-items-center justify-content-center">
-                    <!-- Изображение сердца -->
-                    <div class="heart-container">
-                        <img src="img/heart.png" alt="Сердце" class="heart-image" id="heart">
-                    </div>
-
-                    <!-- Анимированная синусоида -->
-                    <div class="ecg-wrapper">
-                        <svg class="ecg-svg" viewBox="0 0 1000 180" preserveAspectRatio="xMidYMid meet">
-                            <path
-                                class="ecg-path"
-                                id="ecg-path"
-                                d="M 0 90 L 0 90"
-                            />
-                            <circle class="ecg-dot" r="4" cx="0" cy="90" id="ecg-dot"/>
-                        </svg>
                     </div>
                 </div>
             </div>
@@ -145,8 +147,8 @@
                 </div>
                 <h3 style="text-align: center; margin-bottom: 1.5rem;">Цель конференции</h3>
                 <p style="text-align: center; max-width: 900px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8;">
-                    Создать междисциплинарную платформу для обмена опытом и согласования подходов к лечению фибрилляции предсердий 
-                    как системному заболеванию, объединяя кардиологов, аритмологов, сердечно-сосудистых хирургов и смежных специалистов 
+                    Создать междисциплинарную платформу для обмена опытом и согласования подходов к лечению фибрилляции предсердий
+                    как системному заболеванию, объединяя кардиологов, аритмологов, сердечно-сосудистых хирургов и смежных специалистов
                     для повышения качества маршрутизации, лечения и долгосрочного наблюдения пациентов в типичных и атипичных клинических ситуациях.
                 </p>
             </div>
@@ -196,8 +198,20 @@
                 </div>
             </div>
 
+
+        </div>
+    </section>
+
+    <!-- НМО -->
+    <section class="section section-gray" id="nmo">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Непрерывное медицинское образование</h2>
+            <p class="section-subtitle fade-in-up">
+                Мероприятие подано на аккредитацию в Комиссию по оценке учебных мероприятий для НМО
+            </p>
+
             <!-- Целевая аудитория -->
-            <div class="fade-in-up" style="margin-top: 4rem;">
+            <div class="fade-in-up my-2">
                 <h3 style="text-align: center; margin-bottom: 1.5rem; font-weight: 600;">
                     <i class="bi bi-people-fill me-2" style="color: var(--primary-blue);"></i>
                     Целевая аудитория НМО
@@ -214,16 +228,6 @@
                     <span class="audience-tag">Организация здравоохранения</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- НМО -->
-    <section class="section section-gray" id="nmo">
-        <div class="container">
-            <h2 class="section-title fade-in-up">Непрерывное медицинское образование</h2>
-            <p class="section-subtitle fade-in-up">
-                Мероприятие подано на аккредитацию в Комиссию по оценке учебных мероприятий для НМО
-            </p>
 
             <div class="nmo-box fade-in-up">
                 <h3 style="text-align: center; margin-bottom: 0.5rem; color: var(--dark-blue);">
@@ -265,11 +269,11 @@
                 </div>
                 <h2>Регистрация на конференцию</h2>
                 <p>Для участия обязательна предварительная регистрация</p>
-                
-                <button class="btn btn-primary-custom btn-lg" onclick="alert('Форма регистрации будет доступна в ближайшее время!')">
+
+                <button class="btn btn-primary-custom btn-lg" data-bs-toggle="modal" data-bs-target="#registerModal">
                     <i class="bi bi-pencil-square me-2"></i>Зарегистрироваться
                 </button>
-                
+
                 <div class="program-note">
                     <p>
                         <i class="bi bi-info-circle me-2"></i>
@@ -279,6 +283,36 @@
             </div>
         </div>
     </section>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="registerModalLabel">
+                        <i class="fas fa-user-edit"></i> Регистрация на мероприятие:
+                        <span class="text-primary-emphasis text-uppercase fs-6">
+
+                            Ритм сердца – 2026
+
+                        </span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body hero-section paralax">
+
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <!--iframe script here-->
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark btn-sm" data-bs-dismiss="modal"><i class="bi bi-x-square text-danger"></i> Закрыть окно</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Контакты -->
     <section class="section section-white" id="contacts">
